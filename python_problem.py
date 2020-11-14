@@ -74,3 +74,35 @@ def miniMaxSum(arr):
         if x<min:
             min=x
     print (sum-max,sum-min)
+
+
+"""
+Given the names and grades for each student in a class of  students, 
+store them in a nested list and print the name(s) of any student(s) having the second lowest grade.
+
+Note: If there are multiple students with the second lowest grade, 
+order their names alphabetically and print each name on a new line.
+"""
+
+l = []
+scores = []
+
+if __name__ == '__main__':
+    for _ in range(int(input())):
+        student = []
+        name = input()
+        score = float(input())
+        scores.append(score)
+        student.append(name)
+        student.append(score)
+        l.append(student)
+
+scores.remove(min(scores))
+names = []
+
+for i in l:
+    if i[1] == min(scores):
+        names.append(i[0])
+        
+for i in sorted(names):
+    print(i)
