@@ -77,7 +77,7 @@ def miniMaxSum(arr):
 
 
 """
-Given the names and grades for each student in a class of  students, 
+Given the names and grades for each student in a class of N students, 
 store them in a nested list and print the name(s) of any student(s) having the second lowest grade.
 
 Note: If there are multiple students with the second lowest grade, 
@@ -106,3 +106,21 @@ for i in l:
         
 for i in sorted(names):
     print(i)
+
+
+"""
+Lilah has a string, s, of lowercase English letters that she repeated infinitely many times.
+
+Given an integer, n, find and print the number of letter a's in the first n letters of Lilah's infinite string.
+
+For example, if the string s='abcac' and n=10, the substring we consider is abcacabcac, 
+the first 10 characters of her infinite string. There are 4 occurrences of a in the substring.
+"""
+
+def repeatedString(s, n):
+    # if len(s)<n:
+    #     while len(s)<n:
+    #         s = s+s
+    
+    # return s[:n].count('a')
+    return s.count("a") * (n // len(s)) + s[:n % len(s)].count("a")
