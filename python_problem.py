@@ -124,3 +124,26 @@ def repeatedString(s, n):
     
     # return s[:n].count('a')
     return s.count("a") * (n // len(s)) + s[:n % len(s)].count("a")
+
+
+"""
+Given an array of integers, calculate the ratios of its elements that are positive, negative, and zero. 
+Print the decimal value of each fraction on a new line with  places after the decimal.
+"""
+
+def plusMinus(arr):
+    pos = 0
+    neg = 0
+    net = 0
+    for i in arr:
+        if i>0:
+            pos += 1
+        elif i==0:
+            net += 1
+        else:
+            neg += 1
+            
+    print(pos/len(arr))
+    print(neg/len(arr))
+    print(net/len(arr))
+
