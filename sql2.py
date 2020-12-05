@@ -13,3 +13,12 @@ greater than 38.7880 and less than 137.2345. Truncate your answer to 4 decimal p
 
 select round(sum(lat_n), 4) from station where lat_n>38.7880 and lat_n<137.2345;
 '''
+
+'''
+A median is defined as a number separating the higher half of a data set 
+from the lower half. 
+Query the median of the Northern Latitudes (LAT_N) from STATION 
+and round your answer to 4 decimal places.
+
+select round(s.lat_n, 4) from station as s where (select count(lat_n) from station where lat_n < s.lat_n) = (select count(lat_n) from station where lat_n > s.lat_n)
+'''
