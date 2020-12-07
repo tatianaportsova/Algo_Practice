@@ -22,3 +22,9 @@ and round your answer to 4 decimal places.
 
 select round(s.lat_n, 4) from station as s where (select count(lat_n) from station where lat_n < s.lat_n) = (select count(lat_n) from station where lat_n > s.lat_n)
 '''
+
+'''
+Query the difference between the maximum and minimum populations in CITY.
+
+select max(population)-min(population) as difference from city;
+'''
