@@ -56,3 +56,11 @@ Then print these values as 2 space-separated integers.
 
 select (salary * months)as earnings, count(*) from employee group by 1 order by earnings desc limit 1;
 '''
+
+'''
+Given the CITY and COUNTRY tables, query the sum of the populations of all cities where the CONTINENT is 'Asia'.
+
+select sum(city.population) from city
+join country on city.countrycode=country.code
+where country.continent='Asia';
+'''
