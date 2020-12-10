@@ -95,11 +95,25 @@ group by country.continent;
 #   -Truncation of the value to round occurs when this value is not 0 or not included
 
 # CEILING - Evaluates the value on the right side of the decimal 
-# and returns the smallest integer greater than, or equal to, t
-# he specified numeric expression and accepts one value:
+# and returns the smallest integer greater than, or equal to, 
+# the specified numeric expression and accepts one value:
 #   - Value to round
 
 # FLOOR - Evaluates the value on the right side of the decimal 
 # and returns the largest integer less than or equal 
 # to the specified numeric expression and accepts one value: 
 #   - Value to round
+
+'''
+Harry Potter and his friends are at Ollivander's with Ron, 
+finally replacing Charlie's old broken wand. Hermione decides the best way to choose 
+is by determining the minimum number of gold galleons needed to buy each non-evil wand 
+of high power and age. 
+Write a query to print the id, age, coins_needed, and power of the wands that Ron's 
+interested in, sorted in order of descending power. 
+If more than one wand has same power, sort the result in order of descending age.
+
+select max(wands.power) from wands
+join wands_property on wands.code=wands_property.code
+where wands_property.is_evil=0;
+'''
