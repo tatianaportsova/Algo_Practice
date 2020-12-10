@@ -76,9 +76,30 @@ where country.continent='Africa';
 
 
 '''
-Given the CITY and COUNTRY tables, query the names of all the continents (COUNTRY.Continent) and their respective average city populations (CITY.Population) rounded down to the nearest integer.
+Given the CITY and COUNTRY tables, query the names of all the continents 
+(COUNTRY.Continent) and their respective average city populations (CITY.Population) 
+rounded down to the nearest integer.
 
-select country.continent, ceil(city.population) from city
-join country on city.CountryCode=country.Code
+select country.continent, floor(avg(city.population)) from city
+join country on city.countrycode=country.code
 group by country.continent;
 '''
+# ROUND - Rounds a positive or negative value to a specific length 
+# and accepts three values:
+#   - Value to round
+#      - Positive or negative number
+#      - This data type can be an int (tiny, small, big), decimal, numeric, money or smallmoney
+#   - Precision when rounding
+#      - Positive number rounds on the right side of the decimal point
+#      - Negative number rounds on the left side of the decimal point
+#   -Truncation of the value to round occurs when this value is not 0 or not included
+
+# CEILING - Evaluates the value on the right side of the decimal 
+# and returns the smallest integer greater than, or equal to, t
+# he specified numeric expression and accepts one value:
+#   - Value to round
+
+# FLOOR - Evaluates the value on the right side of the decimal 
+# and returns the largest integer less than or equal 
+# to the specified numeric expression and accepts one value: 
+#   - Value to round
