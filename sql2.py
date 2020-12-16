@@ -117,3 +117,16 @@ select max(wands.power) from wands
 join wands_property on wands.code=wands_property.code
 where wands_property.is_evil=0;
 '''
+
+'''
+P(R) represents a pattern drawn by Julia in R rows. The following pattern represents P(5):
+
+* * * * * 
+* * * * 
+* * * 
+* * 
+*
+Write a query to print the pattern P(20).
+
+SELECT REPEAT('* ', @NUMBER := @NUMBER - 1) FROM information_schema.tables, (SELECT @NUMBER:=21) t LIMIT 20;
+'''
