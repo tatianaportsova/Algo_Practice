@@ -130,3 +130,16 @@ Write a query to print the pattern P(20).
 
 SELECT REPEAT('* ', @NUMBER := @NUMBER - 1) FROM information_schema.tables, (SELECT @NUMBER:=21) t LIMIT 20;
 '''
+
+'''
+P(R) represents a pattern drawn by Julia in R rows. The following pattern represents P(5):
+
+* 
+* * 
+* * * 
+* * * * 
+* * * * *
+Write a query to print the pattern P(20).
+
+select REPEAT('* ', @i := @i + 1) from information_schema.tables, (select @i := 0) t LIMIT 20;
+'''
