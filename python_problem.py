@@ -176,3 +176,13 @@ Your task is to read them and print the following:
 
 def print_full_name(a, b):
     print "Hello {} {}! You just delved into python.".format(a,b)
+
+
+"""
+We have seen that lists are mutable (they can be changed), 
+and tuples are immutable (they cannot be changed).
+You are given an immutable string, and you want to make changes to it.
+"""
+
+def mutate_string(string, position, character):
+    return string[:position] + str(character) + string[position+1:]
