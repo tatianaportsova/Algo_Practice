@@ -186,3 +186,24 @@ You are given an immutable string, and you want to make changes to it.
 
 def mutate_string(string, position, character):
     return string[:position] + str(character) + string[position+1:]
+
+
+"""
+In this challenge, the user enters a string and a substring. 
+You have to print the number of times that the substring occurs in the given string. 
+String traversal will take place from left to right, not from right to left.
+NOTE: String letters are case-sensitive.
+"""
+
+def count_substring(string, sub_string):
+    count_ = 0
+    if len(sub_string) > len(string):
+        return count_
+    elif len(sub_string) <= len(string):
+        start = 0
+        while start < len(string) and start+(len(sub_string)+1) <= len(string)+1:
+            if string[start:start+len(sub_string)] == sub_string:
+                count_ += 1
+            start += 1
+
+    return count_
