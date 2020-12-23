@@ -207,3 +207,27 @@ def count_substring(string, sub_string):
             start += 1
 
     return count_
+
+"""
+You are given a string .
+Your task is to find out if the string  contains: alphanumeric characters, 
+alphabetical characters, digits, lowercase and uppercase characters.
+
+In the first line, print True if S has any alphanumeric characters. Otherwise, print False.
+In the second line, print True if S has any alphabetical characters. Otherwise, print False.
+In the third line, print True if S has any digits. Otherwise, print False.
+In the fourth line, print True if S has any lowercase characters. Otherwise, print False.
+In the fifth line, print True if S has any uppercase characters. Otherwise, print False.
+"""
+
+if __name__ == '__main__':
+    s = raw_input()
+    print(s.isalnum())
+    if not s.isdigit():
+        print(True)
+    if not s.isalpha():
+        print(True)
+    if not s.isupper():
+        print(True)
+    if not s.islower():
+        print(True)
