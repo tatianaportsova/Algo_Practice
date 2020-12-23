@@ -222,12 +222,8 @@ In the fifth line, print True if S has any uppercase characters. Otherwise, prin
 
 if __name__ == '__main__':
     s = raw_input()
-    print(s.isalnum())
-    if not s.isdigit():
-        print(True)
-    if not s.isalpha():
-        print(True)
-    if not s.isupper():
-        print(True)
-    if not s.islower():
-        print(True)
+    print(any(i.isalnum()  for i in s))
+    print(any(i.isalpha() for i in s))
+    print(any(i.isdigit() for i in s))
+    print(any(i.islower() for i in s))
+    print(any(i.isupper() for i in s))
