@@ -161,3 +161,19 @@ Write a query to help Eve.
 select students.name, grades.grade, students.marks from students inner join grades on students.marks between grades.min_mark and grades.max_mark where grades.grade > 7 order by grades.grade desc, students.name asc;
 select null, grades.grade, students.marks from students inner join grades on students.marks between grades.min_mark and grades.max_mark where grades.grade <= 7 order by grades.grade desc, students.marks asc;
 '''
+
+'''
+Harry Potter and his friends are at Ollivander's with Ron, 
+finally replacing Charlie's old broken wand.
+
+Hermione decides the best way to choose is by determining 
+the minimum number of gold galleons needed to buy each non-evil wand of high power 
+and age. 
+Write a query to print the id, age, coins_needed, and power of the wands 
+that Ron's interested in, sorted in order of descending power. 
+If more than one wand has same power, sort the result in order of descending age.
+
+
+select wands.id, wands_property.age, wands.coins_needed, wands.power from wands
+join wands_property on wands.code=wands_property.code where wands_property.is_evil=0 and wands.coins_needed = (select min(coins_needed) from wands as w join wands_property as p on (w.code = p.code) where w.power = wands.power and p.age = wands_property.age) order by wands.power desc,  wands_property.age desc;
+'''
