@@ -210,6 +210,23 @@ if __name__ == '__main__':
     print_rangoli(n)
 
 
+"""
+You are given a string S and width W.
+Your task is to wrap the string into a paragraph of width W.
+"""
 
+import textwrap
+
+def wrap(string, max_width):
+    i = 0
+    while (i+max_width) < len(string):
+        print(string[i:i+max_width])
+        i=i+max_width
+    return string[i:]
+
+if __name__ == '__main__':
+    string, max_width = input(), int(input())
+    result = wrap(string, max_width)
+    print(result)
 
 
