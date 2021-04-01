@@ -44,11 +44,10 @@ Find the total number of distinct country stamps.
 '''
 
 N = int(input())
-countries = []
+countries = set()
 while N > 0:
     country = input()
-    countries.append(country)
+    countries.add(country)
     N -= 1  
 
-s = set(countries)
-print (len(s))
+print (len(countries))
