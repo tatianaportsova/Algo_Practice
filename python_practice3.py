@@ -31,3 +31,24 @@ p=y.difference(x)
 q=x.difference(y)
 r=p.union(q)
 print ('\n'.join(sorted(r, key=int)))
+
+
+'''
+Apply your knowledge of the .add() operation to help your friend Rupal.
+
+Rupal has a huge collection of country stamps. 
+She decided to count the total number of distinct country stamps in her collection. 
+She asked for your help. You pick the stamps one by one from a stack of N country stamps.
+
+Find the total number of distinct country stamps.
+'''
+
+N = int(input())
+countries = []
+while N > 0:
+    country = input()
+    countries.append(country)
+    N -= 1  
+
+s = set(countries)
+print (len(s))
